@@ -1,0 +1,25 @@
+{
+	erc721Contracts{
+    id
+    name
+    symbol
+    tokens{
+      identifier
+      owner {
+        id
+      }
+      transfers {
+        from {
+          id
+        }
+        to {
+          id
+        }
+				transaction {
+				  id
+				}
+        timestamp
+      }
+    }
+  }
+}

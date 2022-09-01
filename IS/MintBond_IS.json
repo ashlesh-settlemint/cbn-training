@@ -1,0 +1,268 @@
+[
+    {
+        "id": "d6b1ec23750a1438",
+        "type": "tab",
+        "label": "Bond",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5aac88ce351b2e3d",
+        "type": "template",
+        "z": "d6b1ec23750a1438",
+        "name": "",
+        "field": "connection",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"apiKey\": \"bpaas-192262c4E1Ca960f3E910Fa4948b973c8420A3aD\",\n    \"node\": {\n        \"rpcEndpoint\": \"https://node01-b8e3.settlemint.com\"\n    },\n    \"from\": \"0xfd9E5aF06aff28c382dB42a3f6689BD0E35F7620\",\n    \"contract\": {\n        \"address\": \"0x83D5e3973855f47011666858f5b88e45707445c2\",\n        \"abi\": [\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"string\",\n                        \"name\": \"name_\",\n                        \"type\": \"string\"\n                    },\n                    {\n                        \"internalType\": \"string\",\n                        \"name\": \"symbol_\",\n                        \"type\": \"string\"\n                    }\n                ],\n                \"stateMutability\": \"nonpayable\",\n                \"type\": \"constructor\"\n            },\n            {\n                \"anonymous\": false,\n                \"inputs\": [\n                    {\n                        \"indexed\": true,\n                        \"internalType\": \"address\",\n                        \"name\": \"owner\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"indexed\": true,\n                        \"internalType\": \"address\",\n                        \"name\": \"approved\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"indexed\": true,\n                        \"internalType\": \"uint256\",\n                        \"name\": \"tokenId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"Approval\",\n                \"type\": \"event\"\n            },\n            {\n                \"anonymous\": false,\n                \"inputs\": [\n                    {\n                        \"indexed\": true,\n                        \"internalType\": \"address\",\n                        \"name\": \"owner\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"indexed\": true,\n                        \"internalType\": \"address\",\n                        \"name\": \"operator\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"indexed\": false,\n                        \"internalType\": \"bool\",\n                        \"name\": \"approved\",\n                        \"type\": \"bool\"\n                    }\n                ],\n                \"name\": \"ApprovalForAll\",\n                \"type\": \"event\"\n            },\n            {\n                \"anonymous\": false,\n                \"inputs\": [\n                    {\n                        \"indexed\": true,\n                        \"internalType\": \"address\",\n                        \"name\": \"from\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"indexed\": true,\n                        \"internalType\": \"address\",\n                        \"name\": \"to\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"indexed\": true,\n                        \"internalType\": \"uint256\",\n                        \"name\": \"tokenId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"Transfer\",\n                \"type\": \"event\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"to\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"tokenId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"approve\",\n                \"outputs\": [],\n                \"stateMutability\": \"nonpayable\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"owner\",\n                        \"type\": \"address\"\n                    }\n                ],\n                \"name\": \"balanceOf\",\n                \"outputs\": [\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"stateMutability\": \"view\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"bondToDetails\",\n                \"outputs\": [\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"bondId\",\n                        \"type\": \"uint256\"\n                    },\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"faceValue\",\n                        \"type\": \"uint256\"\n                    },\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"maturityTimestamp\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"stateMutability\": \"view\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"bondId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"burnBond\",\n                \"outputs\": [],\n                \"stateMutability\": \"nonpayable\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"bondId\",\n                        \"type\": \"uint256\"\n                    },\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"faceValue\",\n                        \"type\": \"uint256\"\n                    },\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"maturityTimestamp\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"createBond\",\n                \"outputs\": [],\n                \"stateMutability\": \"nonpayable\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"tokenId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"getApproved\",\n                \"outputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"\",\n                        \"type\": \"address\"\n                    }\n                ],\n                \"stateMutability\": \"view\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"owner\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"operator\",\n                        \"type\": \"address\"\n                    }\n                ],\n                \"name\": \"isApprovedForAll\",\n                \"outputs\": [\n                    {\n                        \"internalType\": \"bool\",\n                        \"name\": \"\",\n                        \"type\": \"bool\"\n                    }\n                ],\n                \"stateMutability\": \"view\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"to\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"bondId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"mintBond\",\n                \"outputs\": [],\n                \"stateMutability\": \"nonpayable\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [],\n                \"name\": \"name\",\n                \"outputs\": [\n                    {\n                        \"internalType\": \"string\",\n                        \"name\": \"\",\n                        \"type\": \"string\"\n                    }\n                ],\n                \"stateMutability\": \"view\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"tokenId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"ownerOf\",\n                \"outputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"\",\n                        \"type\": \"address\"\n                    }\n                ],\n                \"stateMutability\": \"view\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"from\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"to\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"tokenId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"safeTransferFrom\",\n                \"outputs\": [],\n                \"stateMutability\": \"nonpayable\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"from\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"to\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"tokenId\",\n                        \"type\": \"uint256\"\n                    },\n                    {\n                        \"internalType\": \"bytes\",\n                        \"name\": \"data\",\n                        \"type\": \"bytes\"\n                    }\n                ],\n                \"name\": \"safeTransferFrom\",\n                \"outputs\": [],\n                \"stateMutability\": \"nonpayable\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"operator\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"bool\",\n                        \"name\": \"approved\",\n                        \"type\": \"bool\"\n                    }\n                ],\n                \"name\": \"setApprovalForAll\",\n                \"outputs\": [],\n                \"stateMutability\": \"nonpayable\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"bytes4\",\n                        \"name\": \"interfaceId\",\n                        \"type\": \"bytes4\"\n                    }\n                ],\n                \"name\": \"supportsInterface\",\n                \"outputs\": [\n                    {\n                        \"internalType\": \"bool\",\n                        \"name\": \"\",\n                        \"type\": \"bool\"\n                    }\n                ],\n                \"stateMutability\": \"view\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [],\n                \"name\": \"symbol\",\n                \"outputs\": [\n                    {\n                        \"internalType\": \"string\",\n                        \"name\": \"\",\n                        \"type\": \"string\"\n                    }\n                ],\n                \"stateMutability\": \"view\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"tokenId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"tokenURI\",\n                \"outputs\": [\n                    {\n                        \"internalType\": \"string\",\n                        \"name\": \"\",\n                        \"type\": \"string\"\n                    }\n                ],\n                \"stateMutability\": \"view\",\n                \"type\": \"function\"\n            },\n            {\n                \"inputs\": [\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"from\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"address\",\n                        \"name\": \"to\",\n                        \"type\": \"address\"\n                    },\n                    {\n                        \"internalType\": \"uint256\",\n                        \"name\": \"tokenId\",\n                        \"type\": \"uint256\"\n                    }\n                ],\n                \"name\": \"transferFrom\",\n                \"outputs\": [],\n                \"stateMutability\": \"nonpayable\",\n                \"type\": \"function\"\n            }\n        ]\n    }\n}",
+        "output": "json",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "4d594d887e68d7e3"
+            ]
+        ]
+    },
+    {
+        "id": "ed2f6ea8314a80e9",
+        "type": "inject",
+        "z": "d6b1ec23750a1438",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "5aac88ce351b2e3d"
+            ]
+        ]
+    },
+    {
+        "id": "4d594d887e68d7e3",
+        "type": "function",
+        "z": "d6b1ec23750a1438",
+        "name": "",
+        "func": "global.set(\"connectionObj\", msg.connection);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a122e18bc88b59c",
+        "type": "delay",
+        "z": "d6b1ec23750a1438",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 940,
+        "y": 340,
+        "wires": [
+            [
+                "868fef54eaef37f4"
+            ]
+        ]
+    },
+    {
+        "id": "f5c04cc5f3f9d103",
+        "type": "switch",
+        "z": "d6b1ec23750a1438",
+        "name": "Check Receipt Available",
+        "property": "payload.receipt",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1140,
+        "y": 260,
+        "wires": [
+            [
+                "9a122e18bc88b59c"
+            ],
+            [
+                "4f7034c88e313d42"
+            ]
+        ]
+    },
+    {
+        "id": "868fef54eaef37f4",
+        "type": "function",
+        "z": "d6b1ec23750a1438",
+        "name": "Fetch transaction receipt",
+        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst rpcEndpoint = msg.connection.node.rpcEndpoint;\nconst apiKey = msg.connection.apiKey;\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.providers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nmsg.payload.receipt = await provider.getTransactionReceipt(msg.payload.txHash);\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "ethers",
+                "module": "ethers"
+            }
+        ],
+        "x": 780,
+        "y": 260,
+        "wires": [
+            [
+                "f5c04cc5f3f9d103"
+            ]
+        ]
+    },
+    {
+        "id": "4f7034c88e313d42",
+        "type": "switch",
+        "z": "d6b1ec23750a1438",
+        "name": "Check Receipt Status",
+        "property": "payload.receipt.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1430,
+        "y": 320,
+        "wires": [
+            [
+                "ed294fccbc3ee7f8"
+            ],
+            [
+                "66cc4e5e2575e8ab"
+            ]
+        ]
+    },
+    {
+        "id": "120410c692555f8e",
+        "type": "function",
+        "z": "d6b1ec23750a1438",
+        "name": "mintBond",
+        "func": "///////////////////////////////////////////////////////////\n// Configuration                                         //\n///////////////////////////////////////////////////////////\n\nconst rpcEndpoint = msg.connection.node.rpcEndpoint;\nconst apiKey = msg.connection.apiKey;\nconst from = msg.connection.from;\nconst address = msg.connection.contract.address;\nconst abi = msg.connection.contract.abi;\n\n\n///////////////////////////////////////////////////////////\n// Logic                                                 //\n///////////////////////////////////////////////////////////\n\nconst provider = new ethers.providers.JsonRpcProvider(`${rpcEndpoint}/${apiKey}`);\nconst signer = new ethers.VoidSigner(from, provider)\nconst contract = new ethers.Contract(address, abi, signer);\n\nconst tx = await contract.populateTransaction.mintBond(msg.payload.to, msg.payload.bondId);\n\nconst result = await provider.send('eth_sendTransaction', [tx])\nmsg.payload = {txHash: result}\n\n\n\n///////////////////////////////////////////////////////////\n// End                                                   //\n///////////////////////////////////////////////////////////\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "ethers",
+                "module": "ethers"
+            }
+        ],
+        "x": 490,
+        "y": 260,
+        "wires": [
+            [
+                "868fef54eaef37f4"
+            ]
+        ]
+    },
+    {
+        "id": "ed294fccbc3ee7f8",
+        "type": "http response",
+        "z": "d6b1ec23750a1438",
+        "name": "Success",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1620,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "66cc4e5e2575e8ab",
+        "type": "http response",
+        "z": "d6b1ec23750a1438",
+        "name": "Failed",
+        "statusCode": "500",
+        "headers": {},
+        "x": 1630,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "590409a261da515d",
+        "type": "function",
+        "z": "d6b1ec23750a1438",
+        "name": "",
+        "func": "msg.connection = global.get(\"connectionObj\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 260,
+        "wires": [
+            [
+                "120410c692555f8e"
+            ]
+        ]
+    },
+    {
+        "id": "56b89d285752861e",
+        "type": "http in",
+        "z": "d6b1ec23750a1438",
+        "name": "",
+        "url": "/mintbond",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 95,
+        "y": 289,
+        "wires": [
+            [
+                "590409a261da515d"
+            ]
+        ]
+    }
+]
